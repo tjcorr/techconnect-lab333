@@ -135,6 +135,15 @@ As Copilot works, the PR updates with its progress:
 
 Take a moment to review the code changes in the "Files changed" tab. Does the implementation look reasonable? Does it follow the patterns in your codebase?
 
+### Step 5: Keep Learning While You Wait
+
+Copilot Coding Agent works like a thorough developer—it reads your codebase, plans an approach, writes code, and tests its work. **Expect 10-15 minutes** for it to complete.
+
+While you wait:
+- **Keep reading** the rest of this exercise to learn about the orchestrator mindset, Code Review, and AI Autofix
+- **Explore** the [What's Next](./04-Whats-Next.md) section to discover advanced Copilot features
+- **Check back** on the PR periodically to see Copilot's progress
+
 ---
 
 ## Part 3: The Orchestrator Mindset
