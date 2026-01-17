@@ -186,6 +186,8 @@ make dev
    - Share any console error messages
    - Copilot can help debug and fix issues
 
+> 💡 **Don't worry if the cart isn't perfect!** AI-generated code isn't always flawless on the first try. If you encounter issues, continue iterating with Copilot to fix them—this back-and-forth is a natural part of working with AI assistants. If you're running short on time, feel free to move on to the next exercise.
+
 ### Step 3: Celebrate! 🎉
 
 You just implemented a complete feature across multiple files without writing most of the code yourself. This is the power of agentic AI assistance!
@@ -194,17 +196,18 @@ You just implemented a complete feature across multiple files without writing mo
 
 ## What Just Happened?
 
-Let's reflect on what Copilot did:
+Think about what you just accomplished. You gave Copilot:
+- A **single image** of a design mockup
+- A **two-sentence description** of what you wanted
 
-| Component | What Copilot Created/Modified |
-|-----------|------------------------------|
-| **CartContext** | State management for cart items across the app |
-| **CartPage** | New page component to display cart contents |
-| **Navigation** | Added cart icon with item count badge |
-| **App Routing** | Added route for the new cart page |
-| **Products** | Connected "Add to Cart" button to actual functionality |
+And Copilot:
+- **Analyzed** your entire codebase to understand the project structure
+- **Planned** a complete implementation strategy
+- **Created** new components, context providers, and pages
+- **Modified** existing files to integrate everything together
+- **Followed** your project's existing patterns and conventions
 
-All of this from a single image and a two-sentence description!
+This is the shift from AI as a "code autocomplete" to AI as a **collaborative developer** that can take on entire features while you focus on the bigger picture.
 
 ---
 
