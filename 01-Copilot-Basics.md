@@ -180,11 +180,6 @@ Copilot will generate a comprehensive test file. Review the output:
 
 > ⚠️ **Important:** Always review Copilot-generated code before using it! Copilot is a powerful tool, but it can make mistakes, hallucinate APIs that don't exist, or miss edge cases. You are responsible for the code you commit - treat Copilot suggestions as a starting point, not a final answer.
 
-To create the test file:
-
-1. Click the **"Create File"** button (or copy the code)
-2. Save it as `api/src/routes/product.test.ts`
-
 ### Step 5: Run the New Tests
 
 Verify everything works:
