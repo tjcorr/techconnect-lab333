@@ -1,4 +1,4 @@
-# Exercise 2: Building Features with Agent Mode
+# Exercise 2: Agent Mode
 
 ⏱️ **Estimated Time:** 15 minutes
 
@@ -24,7 +24,7 @@ Your mission: Implement a complete cart feature including:
 
 Instead of writing this all yourself, you'll let Copilot drive while you supervise.
 
-> 💡 **The Pair Programming Analogy:** Think of Agent mode as handing your laptop to your pair programming partner. You describe what you want, they write the code, and you review their work before committing.
+> 💡 **The Pair Programming Analogy:** Think of Agent mode as handing your keyboard to your pair programming partner. You describe what you want, they write the code, and you review their work before committing.
 
 ---
 
@@ -34,18 +34,19 @@ Before we add the cart, let's see what we're working with.
 
 ### Step 1: Start the Application
 
-If the application isn't already running, start it:
+If the application isn't already running, start it using VS Code's Run and Debug feature:
 
-```bash
-# From the project root
-make dev
-```
+1. Click the **Run and Debug** icon in the Activity Bar on the left side of VS Code (or press **Ctrl + Shift + D**)
+2. Click the **green play button** ▶️ to **Start API & Frontend**. If you don't see the right configuration, select it from the dropdown menu.
 
-You can also use the `Start API & Frontend` task in VS Code.
+> ℹ️ **Note:** The launch configuration starts both the API backend and the React frontend simultaneously. You'll see output from both servers in the Debug Console. 
 
 ### Step 2: Explore the Products Page
 
-1. Open your browser and navigate to the app at `http://localhost:5173`
+1. Your browser should have automatically navigated to the app. You can also open it manually at:
+```
+http://localhost:5137
+```
 2. Click **"Products"** in the navigation bar
 3. Try clicking **"Add to Cart"** on any product
 
@@ -59,15 +60,19 @@ Before diving into code, let's use **Plan mode** to create a structured implemen
 
 ### Step 1: Open Copilot Chat in Plan Mode
 
-1. Open the Copilot Chat panel (`Ctrl+Alt+I` / `Cmd+Alt+I`)
+1. Open the Copilot Chat panel (**Ctrl+Alt+I** / **Cmd+Alt+I**) if not open already
 2. Select **Plan** from the mode dropdown at the bottom of the panel
+
+> ℹ️ **Note:** You may see a note about changing mode and losing your session - this is fine, click yes.
+
+3. Choose a model such as Claude Sonnet 4.5 or Claude Opus 4.5
 
 ### Step 2: Add Visual Context
 
 We have a design mockup for the cart. Let's give Copilot visual context:
 
 1. Click the **paperclip icon** (📎) in the chat input, or drag and drop the file
-2. Attach: `docs/design/cart.png`
+2. Attach: **docs/design/cart.png**
 
 > 💡 **Pro Tip:** Copilot can analyze images to understand UI requirements, color schemes, layouts, and component structure. This is incredibly powerful for implementing designs!
 
@@ -79,13 +84,11 @@ With the image attached, enter this prompt:
 I need to plan for a simple Cart Page. I also want a Cart icon in the NavBar that shows the number of items in the Cart.
 ```
 
+> ℹ️ **Note:** This may take a moment. Watch as Copilot automatically discovers and analyzes relevant files in your project to build context for the plan.
+
 ### Step 4: Review the Plan
 
-Copilot will analyze the codebase and the design image, then generate a detailed implementation plan. You should see:
-
-- **Files to create** - New components like CartPage, CartContext, etc.
-- **Files to modify** - Updates to Navigation, routing, etc.
-- **Implementation steps** - A logical order for the changes
+Copilot will analyze the codebase and the design image, then generate a detailed implementation plan. The exact output will vary, but it will include a clear summary and the implementation steps Copilot plans to take.
 
 Take a moment to review the plan:
 - Does it make sense architecturally?
@@ -95,7 +98,7 @@ Take a moment to review the plan:
 Copilot might also ask for additional information in a **Further Considerations** section, such as:
 
 > **Further Considerations**
-> - Should the cart eventually submit orders via the existing `/orders` and `/order-details` API endpoints on checkout?
+> - Should the cart eventually submit orders via the existing **/orders** and **/order-details** API endpoints on checkout?
 > - Add toast notifications for cart actions (added/removed items) instead of alerts?
 > - Include product images in cart display similar to the attached screenshot?
 
@@ -113,6 +116,8 @@ Now for the exciting part! Let's have Copilot switch to Agent mode and implement
 
 At the bottom of your plan, click the **Start Implementation** button. This will automatically switch Copilot Chat to Agent mode and begin implementing the plan.
 
+> ℹ️ **Note:** You might have to hit **return** to send the "start implementation" prompt
+
 ### Step 2: Watch Copilot Work
 
 Copilot will now autonomously:
@@ -125,6 +130,8 @@ Copilot will now autonomously:
 - Utilize any needed tools / installed MCP servers to achieve your goal
 
 You'll see Copilot's progress in the chat and in your editor as files are created and modified. You can follow along as it works to see how Copilot is working through the plan just like a developer would.
+
+> ℹ️ **Note:** You might need to hit continue if Copilot works for too long.
 
 ### Step 3: Review Each Change
 
@@ -139,18 +146,16 @@ For each file Copilot modifies:
 2. Check that the code follows your project's patterns
 3. Accept or reject based on quality
 
-> 💡 **Best Practice:** Even though Copilot is "driving," you're still responsible for the code quality. Review changes thoughtfully, just as you would in a code review.
+> 💡 **Best Practice:** Even though Copilot is "driving", you're still responsible for the code quality. Review changes thoughtfully, just as you would in a code review.
 
 ---
 
 ## Part 4: Verify the Implementation
 
-Time to see if it works! Our application should have automatically hot-reloaded with the changes made. If not you can always rerun:
+Time to see if it works! Your application should have automatically hot-reloaded with the changes made. If not, you can restart it using VS Code's Run and Debug:
 
-```bash
-# From the project root
-make dev
-```
+1. Click the **Run and Debug** icon in the Activity Bar (or press **Ctrl + Shift + D**)
+2. Click the **green play button** ▶️
 
 ### Step 1: Test the Cart Functionality
 
@@ -167,26 +172,25 @@ make dev
 
 **If something isn't working as expected:**
 
-1. **Check the browser console** (`F12` or `Cmd+Option+I`)
+1. **Check the browser console** (**F12** or **Cmd+Option+I**)
    - Look for any error messages in red
    - These will help identify what went wrong
 
 2. **Verify all files were saved**
    - Check for unsaved indicators (dots) in VS Code tabs
-   - Save all files (`Cmd+K S` or `Ctrl+K S` to save all)
+   - Save all files (**Cmd+K S** or **Ctrl+K S** to save all)
 
 3. **Restart the development server**
-   ```bash
-   # Stop the current server (Ctrl+C in the terminal)
-   make dev
-   ```
 
 4. **Ask Copilot for help**
    - Describe the specific error you're seeing
    - Share any console error messages
    - Copilot can help debug and fix issues
 
-> 💡 **Don't worry if the cart isn't perfect!** AI-generated code isn't always flawless on the first try. If you encounter issues, continue iterating with Copilot to fix them—this back-and-forth is a natural part of working with AI assistants. If you're running short on time, feel free to move on to the next exercise.
+5. **Iterate if needed**
+   - If the implementation doesn't quite match what you wanted, continue the conversation with Copilot in Agent mode
+   - Describe what's different from your expectations and ask Copilot to adjust
+   - This iterative workflow is a natural part of working with AI assistants - it rarely gets everything perfect on the first try!
 
 ### Step 3: Celebrate! 🎉
 
@@ -196,18 +200,17 @@ You just implemented a complete feature across multiple files without writing mo
 
 ## What Just Happened?
 
-Think about what you just accomplished. You gave Copilot:
-- A **single image** of a design mockup
-- A **two-sentence description** of what you wanted
+Let's reflect on what Copilot did:
 
-And Copilot:
-- **Analyzed** your entire codebase to understand the project structure
-- **Planned** a complete implementation strategy
-- **Created** new components, context providers, and pages
-- **Modified** existing files to integrate everything together
-- **Followed** your project's existing patterns and conventions
+| Component | What Copilot Created/Modified |
+|-----------|------------------------------|
+| **CartContext** | State management for cart items across the app |
+| **CartPage** | New page component to display cart contents |
+| **Navigation** | Added cart icon with item count badge |
+| **App Routing** | Added route for the new cart page |
+| **Products** | Connected "Add to Cart" button to actual functionality |
 
-This is the shift from AI as a "code autocomplete" to AI as a **collaborative developer** that can take on entire features while you focus on the bigger picture.
+All of this from a single image and a two-sentence description!
 
 ---
 
@@ -235,4 +238,4 @@ This is the shift from AI as a "code autocomplete" to AI as a **collaborative de
 
 ---
 
-**Next up:** [Exercise 3: GitHub Platform and Agentic AI](./03-GitHub-Platform.md) - Take Copilot beyond the IDE with Coding Agent, Code Reviews, and more! 🚀
+**Next up:** [Exercise 3: GitHub Platform and Agentic AI](./03-GitHub-Platform.md)  where we'll explore Copilot beyond the IDE with Coding Agent, Code Reviews, and more! 🚀

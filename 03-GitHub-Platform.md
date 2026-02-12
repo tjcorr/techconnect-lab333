@@ -15,7 +15,7 @@ In this exercise, you'll discover that GitHub Copilot extends far beyond the IDE
 
 ## The Big Picture: AI Across the Entire SDLC
 
-So far, you've used Copilot as your coding companion in VS Code. But GitHub Copilot is designed to uplevel the **entire software development lifecycle**—from planning to coding to reviewing to deploying.
+So far, you've used Copilot as your coding companion in VS Code. But GitHub Copilot is designed to uplevel the **entire software development lifecycle**-from planning to coding to reviewing to deploying.
 
 In this exercise, we'll explore the GitHub platform features that let you delegate work to AI agents and review their output.
 
@@ -41,7 +41,7 @@ Add autocomplete suggestions to the product search bar
 ```
 
 **Description:**
-```markdown
+```
 ## Summary
 Add autocomplete/typeahead functionality to the product search bar that suggests products as the user types.
 
@@ -65,7 +65,7 @@ Add autocomplete/typeahead functionality to the product search bar that suggests
 - [ ] Mobile-friendly
 ```
 
-4. Click **Submit new issue**
+4. Click **Create** to submit the issue
 
 > 💡 **Pro Tip:** Well-structured issues with clear requirements help both human developers AND AI agents understand what needs to be done.
 
@@ -73,9 +73,9 @@ Add autocomplete/typeahead functionality to the product search bar that suggests
 > 
 > 1. Go to [github.com/copilot](https://github.com/copilot)
 > 2. Describe what you need, specifying your repository:
->    ```
+>    
 >    In OWNER/REPO, create a feature request to add autocomplete suggestions to the product search bar
->    ```
+>    
 > 3. Copilot drafts the issue with a title, body, and can even suggest labels and assignees
 > 4. You can attach screenshots, create multiple issues at once, or even assign the issue directly to Copilot!
 > 5. Review the draft and click **Create**
@@ -86,7 +86,7 @@ Add autocomplete/typeahead functionality to the product search bar that suggests
 
 ## Part 2: Assign the Issue to Copilot Coding Agent
 
-Now for the magic! Instead of implementing this feature yourself, let's delegate it to **Copilot Coding Agent**—an AI agent that can work on issues asynchronously in the background.
+Now for the magic! Instead of implementing this feature yourself, let's delegate it to **Copilot Coding Agent**-an AI agent that can work on issues asynchronously in the background.
 
 ### Step 1: Assign Copilot to the Issue
 
@@ -105,7 +105,7 @@ That's it! Copilot Coding Agent will now:
 
 After assigning the issue:
 
-1. Copilot reacts to the issue with a 👀 (eyes) emoji—this means it's starting work!
+1. Copilot reacts to the issue with a 👀 (eyes) emoji-this means it's starting work!
 2. Shortly after, a new **Draft Pull Request** will be created and linked to the issue
 3. Click the PR link in the issue to navigate to the pull request
 
@@ -123,49 +123,34 @@ On the Pull Request page:
    - Any questions or blockers Copilot encounters
 4. You can also steer the session while Copilot is running to add additional context or suggestions.
 
-> 🎬 **It's like watching a developer work!** You can see Copilot reading files, making decisions, and writing code—all in real-time.
+> 🎬 **It's like watching a developer work!** You can see Copilot reading files, making decisions, and writing code-all in real-time.
 
-### Step 4: Review the Changes
+### Step 4: Review the Completed PR
 
-As Copilot works, the PR updates with its progress:
+Once Copilot finishes, take time to thoroughly review the pull request:
 
-- **Commits** - Each logical change Copilot made
-- **Files changed** - All the code modifications
-- **PR description** - Copilot explains its approach and what it implemented
+1. **Read the PR description** - Copilot explains its approach, what it implemented, and any decisions it made
+2. **Review the code changes** - Click the **Files changed** tab to see all modifications and ensure they follow your project's patterns
+3. **Check the screenshots** - Copilot often includes screenshots showing the implemented UI-review these to verify the feature looks correct
+4. **Verify it meets your requirements** - Does the implementation match what you asked for? If something is missing or needs changes, you can reopen the session and leave a comment mentioning **@copilot** with your feedback-Copilot will resume work and address your request
+5. **Mark as ready for review** - The PR starts as a draft. When you're satisfied, click **Ready for review** to move it out of draft state
+6. **Run workflows manually** - GitHub Actions workflows don't run automatically on Copilot PRs. Click the **Actions** tab and manually trigger any CI/CD workflows you want to run (tests, linting, etc.)
 
-Take a moment to review the code changes in the "Files changed" tab. Does the implementation look reasonable? Does it follow the patterns in your codebase?
-
-### Step 5: Keep Learning While You Wait
-
-Copilot Coding Agent works like a thorough developer—it reads your codebase, plans an approach, writes code, and tests its work. **Expect 10-15 minutes** for it to complete.
-
-While you wait:
-- **Keep reading** the rest of this exercise to learn about the orchestrator mindset, Code Review, and AI Autofix
-- **Explore** the [What's Next](./04-Whats-Next.md) section to discover advanced Copilot features
-- **Check back** on the PR periodically to see Copilot's progress
+> 💡 **Pro Tip:** Treat Copilot's PR like any other code review. Check for edge cases, verify the implementation matches the requirements, and ensure tests pass before merging.
 
 ---
 
 ## Part 3: The Orchestrator Mindset
 
-Here's where things get really powerful. While Copilot is working on the autocomplete feature, **you could assign more issues to Copilot in parallel** or work on complex coding tasks yourslef!
+Here's where things get really powerful. While Copilot is working on the autocomplete feature, **you could assign more issues to Copilot in parallel** or work on complex coding tasks yourself!
 
 ### The New Developer Workflow
 
-```
-Traditional:              With Copilot Coding Agent:
-                         
-You → Task 1             You → Assign Task 1 to Copilot
-     ↓                        Assign Task 2 to Copilot
-You → Task 2                  Assign Task 3 to Copilot
-     ↓                             ↓
-You → Task 3             Review PR 1 ✓
-     ↓                   Review PR 2 ✓
-Done (sequential)        Review PR 3 ✓
-                         Done (parallel!)
-```
+**Traditional approach:** You work on tasks one at a time-finish Task 1, then start Task 2, then Task 3. Everything happens sequentially.
 
-You become an **orchestrator**—delegating work, reviewing output, and managing multiple workstreams simultaneously.
+**With Copilot Coding Agent:** You assign Tasks 1, 2, and 3 to Copilot all at once. While the agents work in parallel, you can focus on complex problems that need human creativity. Then you review and merge the PRs as they complete. The result? Multiple tasks finished in the time it used to take for one!
+
+You become an **orchestrator**-delegating work, reviewing output, and managing multiple workstreams simultaneously.
 
 ### Ways to Start Copilot Coding Agent
 
@@ -175,8 +160,8 @@ Now that you've seen how to assign an issue to Copilot, here are additional ways
 |--------|-----|----------|
 | **Assign Issue** | Assign Copilot to any GitHub issue | Feature requests with clear requirements |
 | **Agent Panel** | Use [github.com/copilot/agents](https://github.com/copilot/agents) to start tasks directly | Quick tasks without creating formal issues |
-| **VS Code** | Use `#copilotCodingAgent` in Copilot Chat (requires [GitHub PR extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)) | Hand off tasks while staying in your IDE |
-| **GitHub CLI** | Run `gh agent-task create` from the command line | Terminal-based workflows |
+| **VS Code** | Use **#copilotCodingAgent** in Copilot Chat (requires [GitHub PR extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)) | Hand off tasks while staying in your IDE |
+| **GitHub CLI** | Run **gh agent-task create** from the command line | Terminal-based workflows |
 | **Azure DevOps** | Assign Azure Boards work items to Copilot | Teams using Azure DevOps for planning |
 
 > 📖 [Learn more about all the ways to start Coding Agent](https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/create-a-pr)
@@ -206,32 +191,52 @@ When Copilot Coding Agent finishes (or for any PR, human or AI-authored), you ca
 ### Step 1: Request a Copilot Review
 
 1. Open the PR that Copilot created (or any pull request)
+
+> 💡 **If your Copilot Coding Agent PR isn't finished yet:** You can create a new pull request from the **feat/legal** branch which should already exist in your repository. Go to the **Pull requests** tab, click **New pull request**, select **feat/legal** as the compare branch, and click **Create pull request**. You can use this PR for the remaining steps.
+
 2. Open the **Reviewers** menu in the right sidebar
 3. Select **Copilot**
-4. Wait for Copilot to review—this usually takes less than 30 seconds
+4. Wait for Copilot to complete the code review. You can also view the session just like we did with Copilot Coding Agent to see the agent's thought process.
 
-### Step 2: Review the Feedback
+### Step 2: Review the PR Overview Comment
 
-Scroll down and read through Copilot's comments. Where possible, Copilot's feedback includes **suggested changes** which you can apply with a couple of clicks.
+Once Copilot finishes its review, start by reading the **Pull request overview** comment at the top. This summary gives you a high-level picture of Copilot's findings across the entire pull request, including:
 
-> ℹ️ **Note:** Copilot always leaves a "Comment" review—not "Approve" or "Request changes." This means Copilot's reviews don't count toward required approvals and won't block merging.
+- A summary of the major changes in the PR
+- A brief description of each modified or new file
+- An overall assessment of the code quality
 
-### Step 3: Work with Suggestions
+This is a great way to quickly understand the scope and impact of the PR before diving into individual findings.
 
-For each suggestion, you can:
-- **Apply** - Accept the suggestion and commit it directly
-- **Batch apply** - Accept multiple suggestions together in a single commit
-- **Implement suggestion** - Click to have Copilot Coding Agent implement more complex changes
-- **Provide feedback** - Use 👍 or 👎 to help improve Copilot's suggestions
-- **Resolve** - Dismiss the conversation if you don't want to act on it
+> ℹ️ **Note:** Copilot always leaves a "Comment" review-not "Approve" or "Request changes." This means Copilot's reviews don't count toward required approvals and won't block merging.
 
-### Step 4: Request Re-review (Optional)
+### Step 3: Review Individual Comments
+
+From the overview, scroll down (or click through) to see Copilot's **inline comments** on specific lines of code. You'll notice two types of findings:
+
+**Simple fixes with suggested changes:**
+Some comments include a ready-made code suggestion that you can commit directly. For these:
+- Click **Commit suggestion** to accept the fix and commit it right away
+- Or click **Add suggestion to batch** to group multiple simple suggestions into a single commit
+
+**More complex issues:**
+For findings that require broader changes (e.g., refactoring, adding error handling across multiple lines), Copilot may not have an inline fix. For these:
+- Click **Implement suggestion** to pass the finding to **Copilot Coding Agent**, which will create a commit addressing the issue
+- This is a great example of **agents working together**-Copilot Code Review identifies the problem, and Copilot Coding Agent implements the solution!
+
+You can also use 👍 or 👎 on any comment to provide feedback and help improve Copilot's suggestions over time, or click **Resolve** to dismiss a conversation you don't want to act on.
+
+### Step 4: Implement All Suggestions at Once
+
+If you'd like Copilot Coding Agent to tackle all the findings in one go, scroll back to the **Pull request overview** comment and click **Implement all suggestions**. This hands off every finding to Copilot Coding Agent, which will work through them and commit the fixes-saving you from addressing each one individually.
+
+### Step 5: Request Re-review (Optional)
 
 When you push new changes, Copilot won't automatically re-review. To request another review, click the **re-request review** button (🔄) next to Copilot's name in the Reviewers menu.
 
 > 💡 **Pro Tips:**
 > - You can [enable automatic reviews](https://docs.github.com/copilot/how-tos/agents/copilot-code-review/automatic-code-review) so Copilot reviews every PR automatically
-> - Customize Copilot's reviews with [custom instructions](https://docs.github.com/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot) in a `.github/copilot-instructions.md` file
+> - Customize Copilot's reviews with [custom instructions](https://docs.github.com/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot) in a **.github/copilot-instructions.md** file. This repository already has some samples you can review!
 
 > 📖 [Learn more about Copilot Code Review](https://docs.github.com/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review?tool=webui)
 
@@ -241,7 +246,7 @@ When you push new changes, Copilot won't automatically re-review. To request ano
 
 GitHub Advanced Security (GHAS) includes **Copilot Autofix**, which automatically generates fixes for security vulnerabilities found by CodeQL code scanning. This feature is enabled by default for GHAS customers and free for all public repositories.
 
-> ℹ️ **Note:** This is an informational section—no action required. Copilot Autofix works automatically when code scanning detects vulnerabilities.
+> ℹ️ **Note:** This is an informational section-no action required. Copilot Autofix works automatically when code scanning detects vulnerabilities.
 
 ### How It Works
 
@@ -271,7 +276,7 @@ Copilot Autofix generates fixes for vulnerabilities in: **C#, C/C++, Go, Java/Ko
 1. **Keep new vulnerabilities out** - Autofix in pull requests helps developers fix issues before they merge
 2. **Pay down security debt** - Generate fixes for existing alerts to tackle your backlog of vulnerabilities
 
-> 🔒 **Found Means Fixed:** With Copilot Autofix, a vulnerability found becomes a vulnerability fixed—helping teams ship secure code faster.
+> 🔒 **Found Means Fixed:** With Copilot Autofix, a vulnerability found becomes a vulnerability fixed-helping teams ship secure code faster.
 
 > 📖 Learn more: [Responsible use of Copilot Autofix](https://docs.github.com/code-security/responsible-use/responsible-use-autofix-code-scanning) | [Copilot Autofix announcement](https://github.blog/news-insights/product-news/secure-code-more-than-three-times-faster-with-copilot-autofix/)
 

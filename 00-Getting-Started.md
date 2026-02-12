@@ -1,6 +1,4 @@
-# LAB333 - Zero to Hero: Hands-On with GitHub Copilot
-
-## 🎯 Lab Overview
+# Lab Overview
 
 **Duration:** ~1 hour
 
@@ -10,11 +8,11 @@ Welcome to this hands-on lab where you'll go from GitHub Copilot basics to advan
 
 | Section | Duration | Key Skills |
 |---------|----------|------------|
-| **Quick Start** | 5 min | Verify environment, understand the codebase |
-| [**Exercise 1: Copilot Basics**](./01-Copilot-Basics.md) | 15 min | Code completions, Copilot Chat, Modes & Models |
+| **Lab Overview** | 5 min | Setup dev environment |
+| [**Exercise 1: Copilot Basics**](./01-Copilot-Basics.md)| 10 min | Code completions, Copilot Chat, Modes & Models |
 | [**Exercise 2: Agent Mode**](./02-Agent-Mode.md) | 15 min | Plan Mode, Agent Mode, vision capabilities, review workflow |
-| [**Exercise 3: GitHub Platform**](./03-GitHub-Platform.md) | 20 min | Copilot Coding Agent, Code Review, AI Autofix |
-| [**What's Next**](./04-Whats-Next.md) | 5 min | Custom instructions, custom agents, MCP, memory, spaces |
+| [**Exercise 3: GitHub Platform**](./03-GitHub-Platform.md)  | 20 min | Copilot Coding Agent, Code Review, AI Autofix |
+| [**What's Next**](./04-Whats-Next.md)  | 10 min | Custom instructions, custom agents, MCP, memory, spaces |
 
 ---
 
@@ -22,11 +20,10 @@ Welcome to this hands-on lab where you'll go from GitHub Copilot basics to advan
 
 You've just joined **Octocat Supply**, a company bringing smart AI technology to cat products. You're part of the engineering team maintaining their flagship application, which includes:
 
-- **API Layer** (`/api`) - TypeScript/Express backend with SQLite
-- **Frontend** (`/frontend`) - React application with modern UI
+- **API Layer** (/api) - TypeScript/Express backend with SQLite
+- **Frontend** (/frontend) - React application with modern UI
 
-
-<!-- TODO add in a summary once we have the labs built out -->
+> 💡 **Don't worry if these technologies are new to you.** Copilot will help with the heavy lifting, and you can ask it to explain anything unfamiliar as you go.
 
 Let's get started! 🚀
 
@@ -34,83 +31,78 @@ Let's get started! 🚀
 
 ## 📋 Prerequisites
 
-Before beginning, you'll need to set up your own copy of the Octocat Supply repository.
+## Step 1: Log in to GitHub
 
-### Step 1: Create Your Repository from the Template
+Before you begin this lab you will need to be logged into GitHub and have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license. The lab also assumes you have Visual Studio Code and basic development tools like npm and make. This lab also works well in a Codespace for cloud based development if you don't have the necessary prereqs.
 
-1. Navigate to the template repository: **[https://github.com/octodemo/octocat_supply](https://github.com/octodemo/octocat_supply)**
+## Step 2: Create a New Repository from Template
 
-2. Click the green **"Use this template"** button near the top right of the page
+You'll now create your own copy of the project by using a template repository.
 
-3. Select **"Create a new repository"** from the dropdown
-
-4. Configure your new repository:
-   - **Owner**: Select your organization //TODO add exact org name
-   - **Repository name**: `octocat_supply_<your_name>` (or a name of your choice)
-   - **Description**: (optional) Add a description for your repository
-   - **Visibility**: Choose **Private** 
-
-5. Click **"Create repository"**
-
-> 📖 For more details, see GitHub's documentation on [Creating a repository from a template](https://docs.github.com/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
-
-### Step 2: Clone the Repository Locally
-
-1. On your new repository's page, click the green **"Code"** button
-
-2. Copy the repository URL (HTTPS or SSH based on your preference)
-
-3. Open your terminal and run:
-   ```bash
-   git clone <your-repository-url>
-   ```
-   Replace `<your-repository-url>` with the URL you copied
-
-4. Navigate into the cloned directory:
-   ```bash
-   cd octocat_supply
-   ```
-
-> 📖 For more details, see GitHub's documentation on [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-
-### Step 3: Open in VS Code
-
-1. Open VS Code
-
-2. Go to **File > Open Folder** (or press `Ctrl+K Ctrl+O` on Windows/Linux, `Cmd+K Cmd+O` on Mac)
-
-3. Navigate to and select the `octocat_supply` folder you just cloned
-
-4. If prompted, click **"Yes, I trust the authors"** to enable all VS Code features
-
-**Alternative**: You can also open the folder directly from your terminal:
-```bash
-code .
+1. Navigate to: 
 ```
+https://github.com/octodemo/octocat_supply
+```
+2. Click the green **Use this template** button (located near the top-right of the page)
+3. Ensure that **Include all branches** is set to **On**
+4. Name your new repository:
+   - **Owner:** Select a suitable organization or your personal account
+   - **Repository name:** Choose a unique name you'll remember (e.g., **yourid-octocat-supply**)
+5. Click the green **Create repository** button at the bottom of the page
 
-> 💡 **Prefer cloud development?** This lab works great in GitHub Codespaces! On your repository page, click **Code → Codespaces → Create codespace on main**. 
+> ℹ️ **Note:** It may take several seconds for the repository to be created.
 
-### Step 4: Install Dependencies
+## Step 3: Open the Project in VS Code
 
-Run the following command to install all project dependencies:
+Now you'll clone (download) your new repository to your local machine and open it in Visual Studio Code.
 
-```bash
+### Clone the Repository
+
+1. Open **Visual Studio Code** from the Start menu or taskbar
+2. Open the Source Control panel by pressing **Ctrl + Shift + G**
+3. Click **Clone Repository**
+4. At the top of the window, click **Clone from GitHub**
+
+### Authorize GitHub Access
+
+5. Click **Allow** to continue signing in
+6. In your web browser, click **Continue**
+7. Click **Authorize** to grant VS Code access to GitHub
+8. Click **Open** to navigate back to VS Code
+
+### Select and Open Your Repository
+
+9. From the dropdown list, select the repository you created in Step 2
+10. Choose a folder to save the project (the default location is fine)
+11. When prompted to "Sign in with your browser," click the button to proceed
+12. Click **Authorize** again if prompted
+13. Return to VS Code
+14. Click **Open** to open the repository in your current window
+15. When asked "Do you trust the authors?", click **Yes, I trust the authors**
+
+## Step 4: Install Dependencies
+
+Finally, you'll install the required project dependencies using the terminal.
+
+1. Open the integrated terminal in VS Code:
+   - Go to **Terminal** > **New Terminal** in the menu bar, or
+   - Press **Ctrl + Shift + `** (backtick key)
+2. In the terminal, type the following command and press **Enter**:
+```
 make install
 ```
+3. Wait for the installation to complete before proceeding
 
-This will install dependencies for both the API and frontend applications. Wait for the installation to complete before proceeding.
+> ℹ️ **Note:** This command will download and install all the packages needed for the project to run. Depending on your machine and network connection it make take a few minutes complete.
 
-### Step 5: Verify GitHub Copilot
+## Step 5: Verify GitHub Copilot is Working
 
-Make sure GitHub Copilot is ready to use:
+Before proceeding, let's make sure GitHub Copilot is enabled and ready to use.
 
-1. Look for the **Copilot icon** in the VS Code status bar (bottom right)
-2. If you see a Copilot icon with no warning indicators, you're signed in and ready!
-3. If you see a warning or the icon is missing:
-   - Click the Copilot icon and select **"Sign in to GitHub"**
-   - Follow the prompts to authenticate with your GitHub account
+1. Look at the **Status Bar** at the bottom of VS Code
+2. Hover over the **Copilot icon** that reads **Finish setup**
+3. Click **Use AI Features** to enable Copilot if prompted
 
+> ℹ️ **Note:** If Copilot is already enabled, you'll see the icon without any warning indicators. You're all set!
 
----
-
-**Ready?** Continue to [Exercise 1: Writing Tests with Autocomplete & Edit Mode](./01-Copilot-Basics.md)
+**Next up:** [Exercise 1: Copilot Basics](./01-Copilot-Basics.md) - Let Copilot autonomously improve test coverage across multiple files! 🚀
