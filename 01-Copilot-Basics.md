@@ -96,12 +96,11 @@ There are several modes to interact with GitHub Copilot:
 
 | Mode | Purpose | Best For |
 |------|---------|----------|
-| **Ask** | Get explanations and answers about code | Understanding existing code, learning new concepts |
-| **Edit** | Modify existing code with AI assistance | Refactoring, bug fixes, feature additions |
+| **Ask** | Get explanations and answers about code | Understanding existing code, learning new concepts, generating code snippets |
 | **Plan** | Create step-by-step implementation strategies before coding | Planning new features, designing implementation |
 | **Agent** | Delegate complex tasks to AI | Multi-file changes, autonomous implementation |
 
-To switch between modes, use the agents dropdown at the bottom of the chat view. For this exercise let's use **Edit** mode.
+To switch between modes, use the mode dropdown at the bottom of the chat view. For this exercise let's use **Ask** mode.
 
 > 📖 **Further Reading:** [Copilot Chat modes](https://docs.github.com/copilot/how-tos/chat-with-copilot/chat-in-ide#copilot-chat-chat-modes)
 
@@ -142,7 +141,7 @@ Now that we've learned about Copilot Chat, let's implement all the tests needed 
 Open the Copilot Chat panel:
 - Select **Open Chat** from the **Chat** menu in the title bar, or
 - Press **Ctrl+Cmd+I** (Mac) or **Ctrl+Alt+I** (Windows/Linux)
-- Make sure you are on **Edit** mode and select the **auto** model or another of your choosing (such as Claude Sonnet 4.5)
+- Make sure you are on **Ask** mode and select the **auto** model or another of your choosing (such as Claude Sonnet 4.5)
 
 > 📖 **Additional Help:** [Access Chat in VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat#_access-chat-in-vs-code)
 
@@ -164,9 +163,8 @@ Note you can't just copy/paste this command since we want to reference particula
 
 ### Step 4: Review and Apply the Generated Code
 
-1. Copilot will generate the test code in a new file: **api/src/routes/product.test.ts**
-2. Click the file link in the chat window to navigate directly to the newly created test file
-3. Review the generated code:
+1. Copilot will generate the test code in a code block in the chat response
+2. Review the generated code:
 
    - **Check the test structure** - Does it match your project's patterns?
    - **Verify the assertions** - Are they testing the right behaviors?
@@ -174,7 +172,7 @@ Note you can't just copy/paste this command since we want to reference particula
 
 > ⚠️ **Important:** Always review Copilot-generated code before using it! Copilot is a powerful tool, but it can make mistakes, hallucinate APIs that don't exist, or miss edge cases. You are responsible for the code you commit - treat Copilot suggestions as a starting point, not a final answer.
 
-4. Press the blue **keep** button if you are happy with the changes. You can also easily undo the changes if Copilot didn't quite hit the mark and try again.
+3. Create the file **api/src/routes/product.test.ts** and paste the generated code. You can use the **copy** button on the code block in the chat response, or hover over the code block and use the **Insert into New File** option to create the file directly.
 
 ### Step 5: Run the New Tests
 
